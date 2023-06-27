@@ -5,20 +5,12 @@
 tasks = {"to have lunch": {"description": "just eat", "status": "not started", "priority": "high"}, 
           "to walk a dog": {"description": "take a dog for a walk", "status": "in progress", "priority": "critical"}}
 
-# # # my_tasks = {'github':{'description':'create token', 'priority':1, 'status':'comleted'}, 'python':{'description':'install pycharm', 'priority':2, 'status':'pending'},'homework':{'description':'upload to lms', 'priority':3, 'status':'pending'}}
-# # # my_tasks['dinner']={'description':'go cafe', 'priority':1, 'status':'pending'}
-# # # my_tasks['dinner']['status']='completed'
-
-# # # Tasks addition:
+# Tasks addition:
 
 task_name = input("Enter your task name: ")
 task_desc = input("Enter your task description: ")
 task_status = input("Enter your task status: ")
 task_prio = input("Enter your task priority: ")
-
-# # tasks.update({task_name:{"description": task_desc, "status": task_status, "priority": task_prio}})
-
-# # print(tasks)
 
 print("\n\n")
 
@@ -42,7 +34,6 @@ disc_name = input("Enter the name of the discipline: ")
 st_grade = input("Enter the grade: ")
 
 if st_name in grades.keys():
-    # grades.update({st_name: {disc_name: st_grade}})
     grades[st_name][disc_name] = st_grade
     print(grades)
 else:
