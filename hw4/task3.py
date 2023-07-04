@@ -1,15 +1,15 @@
-# Make a list that contains all integers from 1 to 100, then find all integers from the list 
-# that are divisible by 7 but not a multiple of 5, and store them in a separate list. Finally, print the list.
+# Words combination
 
-# Constraint: use only while loop for iteration
+# Create a program that reads an input string and then creates 
+# and prints 5 random strings from characters of the input string.
 
-numbers = list(range(1, 101))
+import random
 
-result_list = []
-i = 0
-while i < len(numbers):
-    if numbers[i] % 7 == 0 and numbers[i] % 5 != 0:
-        result_list.append(numbers[i])
-    i += 1
+text = input("Enter your text here: ")
 
-print(result_list)
+chars = [char for char in text]
+
+for i in range(5):
+    random.shuffle(chars)
+    print("".join(chars))
+

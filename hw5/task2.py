@@ -1,11 +1,32 @@
-# The birthday greeting program.
+# Generate 2 lists with the length of 10 with random integers from 1 to 10, 
+# and make a third list containing the common integers between the 2 initial lists without any duplicates.
 
-# Write a program that takes your name as input, 
-# and then your age as input and greets you with the following:
+# Constraints: use only while loop and random module to generate numbers
 
-# “Hello <name>, on your next birthday you’ll be <age+1> years”   
+import random
 
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
+list1 = []
+i = 0
+while i < 10:
+    list1.append(random.randint(1, 10))
+    i += 1
 
-print(f"Hello, {name}, on your next birthday you will be {age + 1} years!")
+list2 = []
+i = 0
+while i < 10:
+    list2.append(random.randint(1, 10))
+    i += 1
+
+common_list = []
+i = 0
+while i < len(list1):
+    j = 0
+    while j < len(list2):
+        if list1[i] == list2[j] and list1[i] not in common_list:
+            common_list.append(list1[i])
+        j += 1
+    i += 1
+
+print("List 1:", list1)
+print("List 2:", list2)
+print("Common List:", common_list)

@@ -1,17 +1,21 @@
-# The Guessing Game.
+# Write a Python program to get the largest number from a list of random numbers with the length of 10
 
-# Write a program that generates a random number between 1 and 10 
-# and lets the user guess what number was generated. 
-# The result should be sent back to the user via a print statement.
+# Constraints: use only while loop and random module to generate numbers
 
 import random
 
-x = random.randint(1, 10)
-print(x)
+numbers = []
+i = 0
+while i < 10:
+    numbers.append(random.randint(1, 100))
+    i += 1
 
-guess = int(input("Guess the number: "))
-while guess != x:
-    print("Try again!")
-    guess = int(input("Guess the number: "))
-else:
-    print("Grats, you've won!")
+largest_number = numbers[0]
+i = 1
+while i < len(numbers):
+    if numbers[i] > largest_number:
+        largest_number = numbers[i]
+    i += 1
+
+print("Generated numbers:", numbers)
+print("Largest number:", largest_number)
