@@ -1,23 +1,11 @@
-# Create a function called make_operation, which takes in a simple arithmetic operator 
-# as a first parameter (to keep things simple let it only be ‘+’, ‘-’ or ‘*’) 
-# and an arbitrary number of arguments (only numbers) as the second parameter. 
-# Then return the sum or product of all the numbers in the arbitrary parameter. 
-# For example:
+# Use a list comprehension to make a list containing tuples (i, j) where `i` 
+# goes from 1 to 10 and `j` is corresponding to `i` squared.
 
-# the call make_operation(‘+’, 7, 7, 2) should return 16
-# the call make_operation(‘-’, 5, 5, -10, -20) should return 30
-# the call make_operation(‘*’, 7, 6) should return 42
+mylist = []
 
-def make_operation(operator, *numbers):
-    answer = numbers[0]
-    for num in numbers[1:]:
-        if operator == "+": 
-            answer += int(num)
-        elif operator == "-":
-            answer -= int(num)
-        elif operator == "*":
-            answer *= int(num)
-    return answer
+for x in range(1, 11):
+    i = x
+    j = x ** 2
+    mylist.append((i, j))
 
-answer = make_operation("-", 5, 7, 3, 8)
-print(answer)
+print(mylist)

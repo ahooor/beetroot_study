@@ -1,16 +1,60 @@
-# The “sys.path” list is initialized from the PYTHONPATH environment variable. 
-# Is it possible to change it from within Python? If so, does it affect where Python looks for module files? 
-# Run some interactive tests to find it out.
+# Create a function called make_country, which takes in a country’s name 
+# and capital as parameters. Then create a dictionary from those two, 
+# with ‘name’ as a key and ‘capital’ as a parameter. Make the function 
+# print out the values of the dictionary to make sure that it works as intended.
 
-# Yes, it is possible to change the directory in Python using the sys module
+countries = {}
+def make_country(name, capital):
+    countries[name] = capital
 
-import sys
+make_country("Ukraine", "Kyiv")
+make_country("USA", "Washington DC")
+make_country("France", "Paris")
+make_country("Germany", "Berlin")
+make_country("Poland", "Warsaw")
 
-print("\n" + "Original sys.path:")
-print(sys.path)
+print(countries)
 
-custom_directory = "/Users/alisiyanosenko/Python/beetroot_study/practice/modules/module.py"
-sys.path.append(custom_directory)
+countries_1 = [
+    {
+        "country": "Ukraine", 
+        "capital": "Kyiv"
+    },
+    {
+        "country": "USA",
+        "capital": "Washington DC"
+    },
+    {
+        "country": "France",
+        "capital": "Paris"
+    },
+    {
+        "country": "Germany",
+        "capital": "Berlin"
+    },
+    {   
+        "country": "Poland",
+        "capital": "Warsaw"
+    }
+]
 
-print("\n" + "Modified sys.path:")
-print(sys.path)
+presidents = {
+    "Ukraine": "Zelensky",
+    "USA": "Biden",
+    "Poland": "Duda"
+}
+
+def show_countries(countries):
+    for country in countries:
+        x = country
+        print(x)
+
+show_countries(countries_1)
+
+def add_president(presidents, countries):
+    for country in countries:
+        if country["country"] in presidents:
+            country["president"] = presidents[country["country"]]
+    print(countries)
+
+add_president(presidents, countries_1)

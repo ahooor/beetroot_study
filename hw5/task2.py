@@ -1,26 +1,11 @@
-# Compute the total price of the stock where the total price is 
-# the sum of the price of an item multiplied by the quantity of this exact item.
+# The birthday greeting program.
 
-stock = {
-    "banana": 6,
-    "apple": 0,
-    "orange": 32,
-    "pear": 15
-}
-prices = {
-    "banana": 4,
-    "apple": 2,
-    "orange": 1.5,
-    "pear": 3
-}
+# Write a program that takes your name as input, 
+# and then your age as input and greets you with the following:
 
-total_price = 0
+# “Hello <name>, on your next birthday you’ll be <age+1> years”   
 
-for item in stock:
-    if item in prices:
-        quantity = stock[item]
-        price = prices[item]
-        item_price = quantity * price
-        total_price += item_price
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
 
-print("Total price: ", total_price)
+print(f"Hello, {name}, on your next birthday you will be {age + 1} years!")

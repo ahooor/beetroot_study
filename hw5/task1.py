@@ -1,15 +1,17 @@
-# Make a program that has some sentence (a string) on input and returns a dict 
-# containing all unique words as keys and the number of occurrences as values. 
+# The Guessing Game.
 
-text = input("Enter your text: ")
-words = text.split()
+# Write a program that generates a random number between 1 and 10 
+# and lets the user guess what number was generated. 
+# The result should be sent back to the user via a print statement.
 
-unique_values = {}
+import random
 
-for word in words:
-    if word in unique_values:
-        unique_values[word] += 1
-    else:
-        unique_values[word] = 1
+x = random.randint(1, 10)
+print(x)
 
-print(unique_values)
+guess = int(input("Guess the number: "))
+while guess != x:
+    print("Try again!")
+    guess = int(input("Guess the number: "))
+else:
+    print("Grats, you've won!")

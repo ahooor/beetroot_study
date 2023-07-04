@@ -1,9 +1,15 @@
-# Create a simple function called favorite_movie, which takes a string containing 
-# the name of your favorite movie. The function should then print “My favorite movie is named {name}”.
+# Make a program that has some sentence (a string) on input and returns a dict 
+# containing all unique words as keys and the number of occurrences as values. 
 
-movie = input("Enter your favorite movie name: ")
+text = input("Enter your text: ")
+words = text.split()
 
-def favorite_movie(name):
-    print(f"My favorite movie is named {name}")
+unique_values = {}
 
-favorite_movie(movie)
+for word in words:
+    if word in unique_values:
+        unique_values[word] += 1
+    else:
+        unique_values[word] = 1
+
+print(unique_values)

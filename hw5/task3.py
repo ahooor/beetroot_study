@@ -1,11 +1,15 @@
-# Use a list comprehension to make a list containing tuples (i, j) where `i` 
-# goes from 1 to 10 and `j` is corresponding to `i` squared.
+# Words combination
 
-mylist = []
+# Create a program that reads an input string and then creates 
+# and prints 5 random strings from characters of the input string.
 
-for x in range(1, 11):
-    i = x
-    j = x ** 2
-    mylist.append((i, j))
+import random
 
-print(mylist)
+text = input("Enter your text here: ")
+
+chars = [char for char in text]
+
+for i in range(5):
+    random.shuffle(chars)
+    print("".join(chars))
+
