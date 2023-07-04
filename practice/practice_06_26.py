@@ -28,8 +28,6 @@ def update_dict(name, price, amount):
     else:
         pass
 
-update_dict(name = "Eggs", price = "18$", amount = "2000")
-
 # 2. Напишіть програму для керування списком завдань. 
 # Кожне завдання може мати назву, опис, пріоритет та статус 
 # (наприклад, "виконується", "в очікуванні", "завершено"). 
@@ -143,5 +141,51 @@ def add_order(dish, price):
 
 add_order(dish = "Cheese plate", price = 12)
 
+def delete_order(dish, price):
+    orders.remove((dish, price))
+    print(orders)
+
+delete_order(dish = "Caesar", price = 30)
+
 def checkout(orders):
+    total_price = 0
     for order in orders:
+        dish, price = order
+        total_price += price
+    return total_price 
+
+total_price = checkout(orders)
+print("Total price:", total_price)
+
+# 8. У вас є дані по покупкам, здійсненим у вашому онлайн-магазині. 
+# Вам потрібно реалізувати функціонал, який надасть базову статистику по здійсненим покупкам. 
+# Надайте дані по наступним моментах:
+# - Які 3 продукти ваші клієнти купують найчастіше
+# - Які 3 продукти ваші клієнти купують найрідше?
+# - Скільки разів клієнти купували кожен з ваших продуктів?
+
+print("\n")
+
+def get_amount(item):
+    return item[1]["amount"]
+
+products = {
+   "Kefir": {"price": "12$", "amount": 50},
+   "Milk": {"price": "8$", "amount": 120},
+   "Yoghurt": {"price": "20$", "amount": 83},
+   "Pasta": {"price": "10$", "amount": 122},
+   "Bread": {"price": "5$", "amount": 189}
+}
+
+sorted_items = sorted(products.items(), key=get_amount)
+
+for product, details in sorted_items:
+    print(product, details)
+
+# 9. Напишіть програму для керування розкладом занять студентів. 
+# Використовуйте список (list) для зберігання інформації про заняття, 
+# де кожне заняття представлене як кортеж (tuple) з назвою предмету і часом проведення 
+# (це може бути як і день, так і конкретна година - вибирайте як вам зручніше). 
+# Реалізуйте можливість додавання нових занять, видалення занять і виведення розкладу занять за допомогою циклу for.
+
+classes = [("Maths", "8:30"), ("Programming", "11:00"), ("Chemistry", "13:00")]

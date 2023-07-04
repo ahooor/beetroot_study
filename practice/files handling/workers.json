@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Gregor",
+        "surname": "Clegane",
+        "occupation": "python dev"
+    },
+    {
+        "name": "Jaime",
+        "surname": "Lannister",
+        "occupation": "PM"
+    },
+    {
+        "name": "Ned",
+        "surname": "Stark",
+        "occupation": "devops"
+    }
+]
