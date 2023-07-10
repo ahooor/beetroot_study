@@ -167,7 +167,7 @@ path = "/Users/alisiyanosenko/Python/beetroot_study/hw10/contacts.json"
 # update_entry(path)
 # delete_entry(path)
 
-def phonebook_ui(path):
+def phonebook_ui(path): 
 
     while True:
         print("\nWhat do you want to do?",
