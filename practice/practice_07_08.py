@@ -1,79 +1,106 @@
-# # def make_pretty(func):
+# 1. Реалізувати декоратор, який перевіряє, чи є аргумент функції числом та виводить повідомлення про помилку, якщо це не так.
 
-# #     def inner():
-# #         print("I got decorated")
-# #         func()
-# #     return inner
+def check_args(func):
+    def check(a):
+        if type(a) == int or type(a) == float:
+            return "It's a number!"
+        else:
+            return "It's not a number!"
+    return check
 
-# # @make_pretty
-# # def ordinary():
-# #     print("I am ordinary")
+@check_args
+def test(a):
+    return a
 
-# # ordinary()  
+print(test(8))
 
-# def smart_divide(func):
-#     def inner(a, b):
-#         print("I am going to divide", a, "and", b)
-#         if b == 0:
-#             print("Whoops! cannot divide")
-#             return
+# 2. Написати декоратор, який обмежує кількість разів виклику функції та видає помилку, якщо ліміт перевищено.
 
-#         return func(a, b)
-#     return inner
+def check_limits(func):
+    def inner(a):
+      calls = 0
+      if calls >= 5:
+         print("You've got func many times")
+      else:
+         calls += 1
+    return inner
 
-# @smart_divide
-# def divide(a, b):
-#     print(a/b)
+@check_limits
+def test(a):
+   print("Func called")
 
-# divide(2,5)
+test("q")
+test("q") 
+test("q") 
 
-# divide(2,0)
+def check_limits(func):
+    calls = 0
+    def inner(a):
+        nonlocal calls  # declare calls as nonlocal ???
+        if calls >= 5:
+            print("You've called function too many times")
+        else:
+            calls += 1
+            func(a)  
+    return inner
 
-# # def check_type(func):
-# #     def wrapper(arg):
-# #         if not isinstance(arg, (int, float)):
-# #             raise TypeError(f"Argument {arg} is not an integer or float.")
-# #         return func(arg)
-# #     return wrapper
+@check_limits
+def test(a):
+   print("Function called")
 
-# # @check_type
-# # def double(arg):
-# #     return arg * 2
+test("q")
+test("q")
+test("q")
+test("q")
+test("q")
+test("q")
 
-# def check_limits(func):
-#     calls = 0
-#     def inner(a):
-#         nonlocal calls  # declare calls as nonlocal
-#         if calls >= 5:
-#             print('You`ve got func many times')
-#         else:
-#             calls += 1
-#             func(a)  # call the original function
-#     return inner
+# 3. Створити декоратор, який змінює результат функції на протилежне значення (наприклад, з True на False).
 
-# @check_limits
-# def test(a):
-#    print('Func called')
+def invert(func):
+    def inner(a):
+        result = func(a) 
+        return not result
+    return inner
 
-# test(2)
-# test(2)
-# test(2)
-# test(2)
-# test(2)
-# test(2)
-# test(2)
-# test(2)
+@invert
+def even(a):
+    return a % 2 == 0
+
+print(even(1))    
+
+# 4. Напишіть декоратор, який перевіряє типи аргументів, переданих до функції, та виводить повідомлення про помилку, якщо типи не відповідають очікуваним.
 
 def check_type(func):
     def inner(a):
         if type(a) != int:
-            print("It's not an int!")
+            print("It's not an int")
         else:
-            return a
+            return func(a)
     return inner
 
 @check_type
 def test(a):
     print(a)
 
-test(2)
+test("5")
+
+# 5. Реалізуйте функцію, яка перетворює рядок на ініціали (перші літери кожного слова). 
+# Використайте вкладену функцію для розбиття рядка на окремі слова та отримання першої літери кожного слова.
+        
+def initials(func):
+    def inner(a):
+        if type(a) != str:
+            print("It's not a string!")
+        else:
+            a = a.split()
+            for word in a:
+                print(word[0].upper())
+        return func(a)
+    return inner
+
+@initials
+def test(a):
+    print(a)
+        
+test("petro fedun")
