@@ -1,0 +1,6 @@
+integer division or modulo by zero
+list index out of range
+list index out of range
+integer division or modulo by zero
+integer division or modulo by zero
+list index out of range

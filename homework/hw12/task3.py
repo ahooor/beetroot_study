@@ -9,10 +9,10 @@
 # otherwise, return the result.
 
 
-def arg_rules(type_: type, max_length: int, contains: list):
+def arg_rules(type: type, max_length: int, contains: list):
     def decorator(func):
         def inner(arg):
-            if not isinstance(arg, type_):
+            if not isinstance(arg, type):
                 print("The argument is not of the expected type.")
                 return False
             if len(arg) > max_length:
@@ -26,7 +26,7 @@ def arg_rules(type_: type, max_length: int, contains: list):
     return decorator
 
 
-@arg_rules(type_=str, max_length=15, contains=["05", "@"])
+@arg_rules(type=str, max_length=15, contains=["05", "@"])
 def create_slogan(name: str) -> str:
     return f"{name} drinks pepsi in his brand new BMW!"
 
