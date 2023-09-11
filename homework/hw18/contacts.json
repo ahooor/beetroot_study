@@ -1,0 +1,38 @@
+[
+    {
+        "fname": "Harry",
+        "lname": "Potter",
+        "number": "+15551234567",
+        "location": "UK"
+    },
+    {
+        "fname": "Jon",
+        "lname": "Snow",
+        "number": "+15555551212",
+        "location": "Westeros"
+    },
+    {
+        "fname": "Frodo",
+        "lname": "Baggins",
+        "number": "+442012345678",
+        "location": "Shire"
+    },
+    {
+        "fname": "Tony",
+        "lname": "Stark",
+        "number": "+15552468135",
+        "location": "USA"
+    },
+    {
+        "fname": "Luke",
+        "lname": "Skywalker",
+        "number": "+77558765432",
+        "location": "Tatooine"
+    },
+    {
+        "fname": "Mom",
+        "lname": "",
+        "number": "+380502901212",
+        "location": "Ukraine"
+    }
+]
